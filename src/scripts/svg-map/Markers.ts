@@ -1,12 +1,14 @@
 import { getClassName } from "../helpers";
-import { openModal } from "../modal";
+import Modal from "./Modal";
 
 export default class Markers {
   private mapElement: HTMLElement | null = null;
   private markers: SVGImageElement[] = [];
+  private modal: Modal;
 
   constructor() {
     this.mapElement = document.querySelector(".map-svg");
+    this.modal = new Modal();
   }
 
   public renderMarkers(markersData: MarkerData[]): void {
@@ -34,27 +36,8 @@ export default class Markers {
     markerElement.setAttribute("data-marker-id", index.toString());
     markerElement.setAttribute("data-related", markerData.related);
     markerElement.classList.add(getClassName(".map-marker"));
-    markerElement.addEventListener("click", () => this.onMarkerClick(markerData.content));
+    markerElement.addEventListener("click", () => this.modal.tiggerModal(index));
 
     return markerElement;
-  }
-
-  private onMarkerClick(content: { title: string; address: string; phone: string; local_page: string }): void {
-    const container = document.getElementById("location-popup-container");
-    if (!container) return;
-
-    const title = container.querySelector("[data-location-title]") as HTMLElement;
-    const address = container.querySelector("[data-location-address]") as HTMLElement;
-    const phone = container.querySelector("[data-location-phone]") as HTMLElement;
-    const localPage = container.querySelector("[data-location-local-page]") as HTMLAnchorElement;
-
-    if (!title || !address || !phone) return;
-
-    title.innerHTML = content.title;
-    address.innerHTML = content.address;
-    phone.innerHTML = content.phone;
-    localPage.href = content.local_page || "/";
-
-    openModal("location-popup");
   }
 }

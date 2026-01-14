@@ -1,11 +1,22 @@
 @use "../helpers/" as *;
 
 .map-marker {
-  width: rem(45);
-  height: rem(45);
+  --size: #{rem(45)};
+  --size-hover: #{rem(48)};
+  --size-mobile: #{rem(60)};
+
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @include hover {
+    width: var(--size-hover);
+    height: var(--size-hover);
+  }
 
   @include small {
-    width: rem(60);
-    height: rem(60);
+    width: var(--size-mobile);
+    height: var(--size-mobile);
   }
 }

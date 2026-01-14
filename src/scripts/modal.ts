@@ -7,7 +7,10 @@ export function InitModals() {
 }
 
 export function openModal(modalId: string) {
+  const element = document.getElementById(modalId);
+  if (!element) return;
   MicroModal.show(modalId, {
     disableScroll: true,
+    disableFocus: true,
   });
 }

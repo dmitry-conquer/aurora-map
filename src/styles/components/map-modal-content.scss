@@ -1,0 +1,70 @@
+@use "../helpers/" as *;
+
+.map-modal-content {
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(24);
+    margin-bottom: rem(16);
+  }
+
+  &__icon {
+    flex: 0 0 rem(52);
+    height: rem(52);
+  }
+
+  &__heading {
+  }
+
+  &__title {
+    color: #434343;
+    font-size: fluid(24, 32);
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: rem(8);
+  }
+
+  &__subtitle {
+    color: #3883d0;
+    font-size: fluid(18, 20);
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(8);
+    padding-left: rem(76);
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(4);
+    a {
+      transition: color 0.3s ease;
+
+      @include hover {
+        color: #52c055;
+      }
+    }
+
+    &-title {
+      color: #707070;
+      font-size: fluid(16, 18);
+      line-height: 1.5;
+    }
+
+    &-text {
+      color: #434343;
+      font-size: fluid(18, 20);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+  }
+
+  &__button {
+  }
+}
