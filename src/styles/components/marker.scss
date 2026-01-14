@@ -1,6 +1,11 @@
 @use "../helpers/" as *;
 
 .map-marker {
-  width: fluid(30, 45);
-  height: fluid(30, 45);
+  width: rem(45);
+  height: rem(45);
+
+  @include small {
+    width: rem(60);
+    height: rem(60);
+  }
 }
