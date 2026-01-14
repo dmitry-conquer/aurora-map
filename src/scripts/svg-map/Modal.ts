@@ -21,7 +21,10 @@ export default class Modal {
 
     const els = Array.from(this.modalContentContainerElement?.children || []);
     if (!els) return;
-    this.modalSlotElement!.innerHTML = els[index]?.innerHTML || "";
+    const elementToInsert = els[index];
+    const outerHTML = elementToInsert?.outerHTML || "";
+    if (outerHTML === "") return;
+    this.modalSlotElement!.innerHTML = outerHTML;
 
     openModal(this.selectors.modalId);
   }

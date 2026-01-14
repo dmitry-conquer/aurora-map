@@ -1,16 +1,23 @@
 @use "../helpers/" as *;
 
 .map-modal-content {
-  &__header {
-    display: flex;
-    align-items: flex-start;
-    gap: rem(24);
-    margin-bottom: rem(16);
+  display: flex;
+  gap: rem(24);
+
+  @include small {
+    flex-direction: column;
   }
 
   &__icon {
     flex: 0 0 rem(52);
     height: rem(52);
+  }
+
+  &__body {
+  }
+
+  &__header {
+    margin-bottom: rem(16);
   }
 
   &__heading {
@@ -35,8 +42,11 @@
   &__columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: rem(8);
-    padding-left: rem(76);
+    gap: rem(24);
+
+    @include x-small {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__column {
@@ -66,5 +76,22 @@
   }
 
   &__button {
+    color: #52c055;
+    font-size: fluid(18, 20);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    column-gap: rem(8);
+
+    &::before {
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2230%22%20height%3D%2228%22%20viewBox%3D%220%200%2030%2028%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M1%2013a1%201%200%201%200%200%202zm28.707%201.707a1%201%200%200%200%200-1.414l-6.364-6.364a1%201%200%201%200-1.414%201.414L27.586%2014l-5.657%205.657a1%201%200%200%200%201.414%201.414zM1%2014v1h28v-2H1z%22%20fill%3D%22%2352c055%22%2F%3E%3C%2Fsvg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex: 0 0 rem(28);
+      height: rem(28);
+    }
   }
 }
