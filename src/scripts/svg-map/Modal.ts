@@ -14,11 +14,11 @@ export default class Modal {
     this.modalElement = document.getElementById(this.selectors.modalId);
     this.modalSlotElement = this.modalElement?.querySelector(this.selectors.modalSlot) || null;
     this.modalContentContainerElement = document.querySelector(this.selectors.modalContentContainer) || null;
-
-    if (!this.modalElement || !this.modalSlotElement || !this.modalContentContainerElement) return;
   }
 
   public tiggerModal(index: number): void {
+    if (!this.modalElement || !this.modalSlotElement || !this.modalContentContainerElement) return;
+
     const els = Array.from(this.modalContentContainerElement?.children || []);
     if (!els) return;
     this.modalSlotElement!.innerHTML = els[index]?.innerHTML || "";
