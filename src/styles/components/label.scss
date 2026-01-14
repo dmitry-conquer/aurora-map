@@ -1,0 +1,19 @@
+@use "../helpers/" as *;
+
+.map-label {
+  pointer-events: none;
+  display: none;
+  position: absolute;
+  font-weight: bold;
+  font-size: fluid(18, 28);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px 40px;
+  z-index: 20;
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  @media (max-width: 640px) {
+    padding: 10px 30px;
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home page</title>
+  </head>
+  <body>
+    <div id="page" class="site-page">
+      <main id="primary" class="site-main">
+        <section id="aurora-map" class="map">
+          <div class="map__container">
+            <div class="map__main svg-map">
+              {{> svg-map}}
+              <span class="map-label"></span>
+            </div>
+            <div class="map__aside">
+              <h2 class="map__aside-title">Service Area Map</h2>
+              <div class="map__aside-list">
+                <button type="button" class="map__aside-button">Bucks County</button>
+                <button type="button" class="map__aside-button">Philadelphia County</button>
+                <button type="button" class="map__aside-button">Montgomery County</button>
+                <button type="button" class="map__aside-button">Delaware County</button>
+                <button type="button" class="map__aside-button">Chester County</button>
+                <button type="button" class="map__aside-button">Lancaster County</button>
+                <button type="button" class="map__aside-button">Wyomissing County</button>
+                <button type="button" class="map__aside-button">Lehigh County</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script>
+      const imageSrc = "https://www.auroraathome.com/wp-content/uploads/2026/01/icon.svg";
+      const mapData = {
+        areas: [
+          "Bucks",
+          "Greene",
+          "Fayette",
+          "Washington",
+          "Allegheny",
+          "Beaver",
+          "Butler",
+          "Armstrong",
+          "Clarion",
+          "Forest",
+          "Venango",
+          "Westmoreland",
+          "Indiana",
+          "Jefferson",
+          "Warren",
+          "Mc Kean",
+          "Elk",
+          "Clearfield",
+          "Blair",
+          "Cambria",
+          "Somerset",
+          "Bedford",
+          "Huntingdon",
+          "Franklin",
+          "Mifflin",
+          "Potter",
+          "Clinton",
+        ],
+        markers: [
+          {
+            x: 90,
+            y: 435,
+            content: {
+              title: "Lycoming",
+              address: "8101 Washington Lane, Suite 200\nWyncote, PA 19095",
+              phone: "412-947-0000",
+            },
+            image_src: imageSrc,
+          },
+          {
+            x: 970,
+            y: 545,
+            content: {
+              title: "Montour",
+              address: "8101 Washington Lane, Suite 200\nWyncote, PA 19095",
+              phone: "412-947-0000",
+            },
+            image_src: imageSrc,
+          },
+          {
+            x: 993,
+            y: 523,
+            content: {
+              title: "Cameron",
+              address: "8101 Washington Lane, Suite 200\nWyncote, PA 19095",
+              phone: "412-947-0000",
+            },
+            image_src: imageSrc,
+          },
+        ],
+      };
+    </script>
+    <script type="module" src="/src/scripts/main.ts" defer></script>
+  </body>
+</html>

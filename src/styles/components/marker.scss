@@ -1,0 +1,6 @@
+@use "../helpers/" as *;
+
+.map-marker {
+  width: fluid(30, 45);
+  height: fluid(30, 45);
+}
