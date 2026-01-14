@@ -9,7 +9,7 @@ export default class SvgMap {
   private config = {
     highlightColor: "var(--accent)",
     breakpoint: 1024,
-    labelOffset: { x: 0, y: -10 },
+    labelOffset: { x: 0, y: -70 },
     mouseMoveDebounce: 3,
     shiftThreshold: 140,
   };
@@ -50,6 +50,7 @@ export default class SvgMap {
       const areaId = area.getAttribute("data-area");
       if (areaId && areasData.includes(areaId)) {
         area.setAttribute("fill", this.config.highlightColor);
+        area.classList.add("area-highlighted");
       }
     });
   }
