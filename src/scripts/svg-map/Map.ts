@@ -1,4 +1,5 @@
 import Markers from "./Markers";
+import Buttons from "./Buttons";
 
 export default class SvgMap {
   private rootElement: HTMLElement | null = null;
@@ -34,6 +35,7 @@ export default class SvgMap {
     this.label = this.rootElement?.querySelector(".map-label") || null;
 
     if (this.rootElement && this.mapElement) {
+      new Buttons();
       this.init(markersData, areasData);
     }
   }

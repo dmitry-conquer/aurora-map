@@ -5,18 +5,16 @@
   --size-hover: #{rem(48)};
   --size-mobile: #{rem(60)};
 
-  width: var(--size);
+  width: auto;
   height: var(--size);
   cursor: pointer;
   transition: all 0.3s ease;
 
   @include hover {
-    width: var(--size-hover);
     height: var(--size-hover);
   }
 
   @include small {
-    width: var(--size-mobile);
     height: var(--size-mobile);
   }
 }

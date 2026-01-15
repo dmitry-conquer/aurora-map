@@ -28,7 +28,7 @@
     font-size: fluid(24, 32);
     font-weight: 600;
     line-height: 1;
-    margin-bottom: rem(8);
+    margin-bottom: rem(8) !important;
   }
 
   &__subtitle {
@@ -53,18 +53,24 @@
     display: flex;
     flex-direction: column;
     row-gap: rem(4);
+    * {
+      margin-bottom: 0 !important;
+    }
+
     a {
       transition: color 0.3s ease;
+      color: #434343 !important;
 
       @include hover {
-        color: #52c055;
+        color: #52c055 !important;
       }
     }
 
     &-title {
-      color: #707070;
+      color: #707070 !important;
       font-size: fluid(16, 18);
       line-height: 1.5;
+      font-weight: 400 !important;
     }
 
     &-text {
@@ -84,6 +90,7 @@
     display: flex;
     align-items: center;
     column-gap: rem(8);
+    margin-top: rem(40);
 
     &::before {
       content: "";
